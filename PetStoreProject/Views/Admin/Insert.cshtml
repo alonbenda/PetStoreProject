@@ -1,0 +1,57 @@
+﻿@model PetStoreProject.Models.Animal
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Insert</title>
+</head>
+<body>
+    <form class="login" method="post" asp-action="AddNewAnimal">
+        <div>
+            <div class="login-table">
+                <label asp-for="Name">Animal Name</label>
+            </div>
+            <input asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <div class="login-table">
+                <label asp-for="Age">Age</label>
+            </div>
+            <input asp-for="Age" />
+            <span asp-validation-for="Age"></span>
+        </div>
+        <div>
+            <div class="login-table">
+                <label asp-for="PictureName">Picture Name</label>
+            </div>
+            <input asp-for="PictureName" />
+            <span asp-validation-for="PictureName"></span>
+        </div>
+        <div>
+            <div class="login-table">
+                <label asp-for="Description">Description</label>
+            </div>
+            <input asp-for="Description" />
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div>
+            <div class="login-table">
+                 <label asp-for="Category">Category</label>
+            </div>
+            <select asp-for="Category" name="categorylist" onChange="combo(this, 'demo')">
+                @foreach (var category in ViewBag.Categories)
+                {
+                    <option>@category.Name</option>
+                }
+            </select>
+            <span asp-validation-for="CategoryId"></span>
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Insert"/>
+        </div>
+    </form>
+</body>
+</html>

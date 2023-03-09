@@ -1,0 +1,58 @@
+﻿@model PetStoreProject.Models.Comment
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="comments-form">
+        <form method="post" asp-action="AddComment" asp-route-AnimalId="@ViewBag.Animal.Id">
+            <input type="submit" value="Submit Comment" />
+            <input asp-for="AnimalId" value="@ViewBag.Animal.Id" type="hidden" />
+            <input class="add-comment" asp-for="CommentText" type="text" placeholder="Add your comments here and press Submit" id="commentInput" />
+        </form>
+    </div>
+    <div class="animal-div">
+        <div class="comments-div">
+            <table class="comments-table">
+                <tr>
+                    <th class="comments-table-td">Name</th>
+                    <td class="comments-table-td">@ViewBag.Animal.Name</td>
+                </tr>
+                <tr>
+                    <th class="comments-table-td">Age</th>
+                    <td class="comments-table-td">@ViewBag.Animal.Age</td>
+                </tr>
+                <tr>
+                    <th class="comments-table-td">Description</th>
+                    <td class="comments-table-td">@ViewBag.Animal.Description</td>
+                </tr>
+                <tr>
+                    <th class="comments-table-td">Category Name</th>
+                    <td class="comments-table-td">@ViewBag.Category.Name</td>
+                </tr>
+            </table>
+        </div>
+        <div class="comments-div">
+            <table class="comments-table">
+                <thead class="comments-table-th">
+                    <tr>
+                        <td class="comments-table-td">Comments on this animal</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var comment in ViewBag.Animal.Comments)
+                    {
+                        <tr>
+                            <td class="comments-table-td">@comment.CommentText</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+﻿h1 {
+    padding: 0px 0px 0px 500px;
+}
+
+.link {
+    display: block;
+}
+
+.body-div {
+    padding: 0px 0px 0px 250px;
+}
+
+.links {
+    display: inline-block;
+    padding: 0px 25px 100px 50px;
+    margin: 20px 0px 0px 10px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+table {
+    border: 1px solid;
+}
+
+tr, th {
+    width: stretch;
+    border: 1px solid;
+}
+
+td {
+    width: 300px;
+    height: 250px;
+    border: 1px solid;
+}
+
+.home-table {
+    width: 100%;
+}
+
+.home-table-head {
+    color: white;
+    background-color: saddlebrown;
+}
+
+.home-table-body {
+    color: saddlebrown;
+    background-color: sandybrown;
+}
+
+.comments-div {
+    display: block;
+}
+
+.comments-table {
+    width: 100%;
+}
+
+.comments-table-td {
+    width: 500px;
+    height: 0px;
+}
+
+.comments-table-th {
+    background-color: dodgerblue;
+}
+
+.comments-form {
+    padding: 0px 0px 0px 900px;
+}
+
+.add-comment {
+    width: 350px;
+}
+
+.animal-td {
+    width: 500px;
+    height: 0px;
+}
+
+.animal-div {
+    display: flex;
+}
+
+.add-animal-admin {
+    padding: 0px 0px 0px 91%;
+}
+
+.admin-table {
+    width: 100%;
+}
+
+.login {
+    padding: 100px 0px 0px 500px;
+}
+
+.login-table {
+    border: 1px;
+}
+
+.insert {
+    padding: 0px 0px 0px 500px;
+}
+
+.insert-label {
+    width: 1000px;
+}
+
+.insert-input {
+    margin: 0px 10px 0px 0px;
+}
+
+label {
+    padding: 0px 10px 0px 0px;
+}

@@ -1,0 +1,57 @@
+﻿@model PetStoreProject.Models.Category
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AdminPage</title>
+</head>
+<body>
+    <form class="add-animal-admin" method="post" asp-action="NewAdmin">
+        <input type="submit" value="Add new admin" />
+    </form>
+    <form method="post" asp-action="FilterCategories">
+        <label asp-for="Name">Please select a category </label>
+        <select asp-for="Name" name="categorylist" onChange="combo(this, 'demo')">
+            <option></option>
+            @foreach (var category in ViewBag.Categories)
+            {
+                <option>@category.Name</option>
+            }
+        </select>
+        <span asp-validation-for="Name"></span>
+        <input type="submit" value="Search" />
+    </form>
+    <form class="add-animal-admin" method="post" asp-action="Insert">
+        <input type="submit" value="Add new animal" />
+    </form>
+    <div>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>My Portrait</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Description</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var animal in ViewBag.Animals)
+                {
+                    <tr>
+                        <td><img src="@animal.PictureName"></td>
+                        <td>@animal.Name</td>
+                        <td>@animal.Age</td>
+                        <td>@animal.Description</td>
+                        <td><a asp-action="EditPage" asp-controller="Admin" asp-route-id="@animal.Id">Edit</a></td>
+                        <td><a asp-action="Delete" asp-controller="Admin" asp-route-id="@animal.Id">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

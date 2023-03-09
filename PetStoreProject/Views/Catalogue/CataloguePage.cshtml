@@ -1,0 +1,49 @@
+﻿@model PetStoreProject.Models.Category
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form method="post" asp-action="FilteringCategories">
+        <label asp-for="Name">Please select a category </label>
+        <select asp-for="Name" name="categorylist" onChange="combo(this, 'demo')">
+            <option></option>
+            @foreach (var category in ViewBag.Categories)
+            {
+                <option>@category.Name</option>
+            }
+        </select>
+        <span asp-validation-for="Name"></span>
+        <input type="submit" value="Search" />
+    </form>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Portrait</th>
+                    <th>Name</th>
+                    <th>Find out more and comment</th>
+                </tr>
+            </thead>
+            <tbody id="animals">
+                @foreach (var animal in ViewBag.Animals)
+                {
+                    <tr>
+                        <td><img src="@animal.PictureName"></td>
+                        <td>@animal.Name</td>
+                        <td>
+                            <form method="post" asp-action="AnimalPage" asp-controller="Animal" asp-route-id="@animal.Id">
+                                <input type="submit" value="Detail" />
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

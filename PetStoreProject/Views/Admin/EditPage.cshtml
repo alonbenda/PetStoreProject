@@ -1,0 +1,43 @@
+﻿@model PetStoreProject.Models.Animal
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <form class="insert" method="post" asp-action="EditName" asp-route-id="@ViewBag.Animal.Id">
+        <label class="insert-label" asp-for="Name">Name</label>
+        <input class="insert-input" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+        <input type="submit" value="Edit Name" />
+    </form>
+    <br />
+    <form class="insert" method="post" asp-action="EditAge" asp-route-id="@ViewBag.Animal.Id">
+        <label class="insert-label" asp-for="Age">Age</label>
+        <input class="insert-input" asp-for="Age" />
+        <span asp-validation-for="Age"></span>
+        <input type="submit" value="Edit Age" />
+    </form>
+    <br />
+    <form class="insert" method="post" asp-action="EditPicture" asp-route-id="@ViewBag.Animal.Id">
+        <label class="insert-label" asp-for="PictureName">Picture</label>
+        <input class="insert-input" asp-for="PictureName" />
+        <span asp-validation-for="PictureName"></span>
+        <input type="submit" value="Edit Picture" />
+    </form>
+    <br />
+    <form class="insert" method="post" asp-action="EditDescription" asp-route-id="@ViewBag.Animal.Id">
+        <label class="insert-label" asp-for="Description">Description</label>
+        <input class="insert-input" asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+        <input type="submit" value="Edit Description" />
+    </form>
+    <br />
+    <form class="insert" method="post" asp-action="ReturnToAdmin">
+        <input type="submit" value="return" />
+    </form>
+</body>
+</html>
